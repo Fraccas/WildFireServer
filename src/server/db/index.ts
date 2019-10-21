@@ -1,8 +1,7 @@
 import * as mysql from 'mysql';
 import config from '../config';
 
-import Books from './books';
-import Categories from './categories';
+import Fires from './fires';
 import AccessTokens from './accesstokens';
 import Users from './users';
 
@@ -18,5 +17,5 @@ export const Query = (query: string, values?: Array<string | number>) => {
 }
 
 export default {
-    Books, Categories, AccessTokens, Users
+    Fires, AccessTokens, Users
 }
