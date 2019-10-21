@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import db from '../../db';
+import { isAdmin } from '../../middleware/authCheckpoints';
 
 const router = Router();
 

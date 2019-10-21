@@ -1,14 +1,12 @@
 import { Router } from 'express';
 
-import booksRouter from './books';
-import categoriesRouter from './categories';
+import firesRouter from './fires';
 import tokensRouter from './tokens';
 import usersRouter from './users';
 
 const router = Router();
 
-router.use('/books', booksRouter);
-router.use('/categories', categoriesRouter);
+router.use('/fires', firesRouter);
 router.use('/tokens', tokensRouter);
 router.use('/users', usersRouter);
 

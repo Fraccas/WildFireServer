@@ -10,7 +10,7 @@ class App extends React.Component {
         return (
             <Router>
             <div className="nav-container router">
-                <nav className="navbar navbar-expand-sm navbar-light bg-warning font-weight-bold">
+                <nav className="navbar navbar-expand-sm navbar-light bg-danger font-weight-bold">
                 <ul className="navbar-nav mr-auto">
                     <li><Link to={'/'} className="nav-link"> Home </Link></li>             
                 </ul>
