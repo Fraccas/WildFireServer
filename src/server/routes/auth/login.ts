@@ -12,8 +12,10 @@ router.post('/', passport.authenticate('local'), async (req: any, res, next) => 
         let token = await CreateToken({ userid: req.user.id });
         res.json({
             token,
+            name: req.user.name,
             role: req.user.role,
-            userid: req.user.id
+            userid: req.user.id,
+            phone: req.user.phone
         });
         console.log("Login Success...");
     } catch (e) {
