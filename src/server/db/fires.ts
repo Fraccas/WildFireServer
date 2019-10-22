@@ -5,7 +5,12 @@ export const getFireByName = async (name: string) => {
 }
 
 export const getFires = async () => {
-    Query('SELECT * FROM fires');
+    return new Promise((resolve, reject) => {
+        pool.query('SELECT * FROM fires', (err, results) => {
+            if (err) return reject(err);
+            resolve(results);
+        });
+    });
 }
 
 export const getFireById = async (id: string) => {
