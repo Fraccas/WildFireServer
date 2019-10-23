@@ -38,7 +38,6 @@ export const updateToken = async (token: string, id: string) => {
     });
 }
 
-
 export default {
     getToken, getTokenById,
     addToken, updateToken
