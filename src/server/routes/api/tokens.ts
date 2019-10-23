@@ -32,13 +32,4 @@ router.put('/update/:token/:id', async (req, res) => {
     }
 });
 
-router.get('/gmap/key', async (req, res) => {
-    try {
-        res.json(process.env.MAPS_KEY);
-    } catch (e) {
-        console.log(e);
-        res.sendStatus(500);
-    }
-});
-
 export default router;
