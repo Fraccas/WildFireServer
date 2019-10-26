@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
 // add new fire
 router.post('/new', async (req, res) => {
     try {
-        res.json(await db.Fires.addFire(req.body.lat, req.body.lon, req.body.userid, req.body.threat, req.body.photo));
+        res.json(await db.Fires.addFire(req.body.lat, req.body.lon, req.body.userid, req.body.threat, req.body.photo, req.body.description));
     } catch (e) {
         console.log(e);
         res.sendStatus(500);

@@ -22,9 +22,9 @@ export const getFireById = async (id: string) => {
     });
 }
 
-export const addFire = async (lat: number, lon: number, userid: number, threat: number, photo: string) => {
+export const addFire = async (lat: number, lon: number, userid: number, threat: number, photo: string, description: string) => {
     return new Promise((resolve, reject) => {
-        pool.query('INSERT INTO fires (lat, lon, userid, threat, photo) VALUES (?, ?, ?, ?, ?)', [lat, lon, userid, threat, photo], (err, results) => {
+        pool.query('INSERT INTO fires (lat, lon, userid, threat, photo, description) VALUES (?, ?, ?, ?, ?, ?)', [lat, lon, userid, threat, photo, description], (err, results) => {
             if (err) return reject(err);
             resolve(results);
         });
