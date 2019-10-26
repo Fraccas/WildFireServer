@@ -9,9 +9,9 @@ const router = express.Router();
 router.post('/', async (req, res, next) => {
     try {
         let user = req.body;
-        console.log("Bookstore Registering new user: " + user.name);
+        console.log("WildFire Registering new user: " + user.name);
         user.password = HashPass(req.body.password);
-        let result: any = await DB.Users.createUser(user.name, user.email, user.password);
+        let result: any = await DB.Users.createUser(user.name, user.email, user.phone, user.password);
         let token = await CreateToken({ userid: result.insertId });
         res.json({
             token, 

@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
 // create new user
 router.post('/new', async (req, res) => {
     try {
-        res.json(await db.Users.createUser(req.body.name, req.body.email, req.body.password));
+        res.json(await db.Users.createUser(req.body.name, req.body.phone, req.body.email, req.body.password));
     } catch (e) {
         console.log(e);
         res.sendStatus(500);

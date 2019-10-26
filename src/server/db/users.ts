@@ -18,9 +18,9 @@ export const getUserByEmail = async (email: string) => {
     });
 }
 
-export const createUser = async (name: string, email: string, password: string) => {
+export const createUser = async (name: string, email: string, phone: string, password: string) => {
     return new Promise((resolve, reject) => {
-        pool.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, password], (err, results) => {
+        pool.query('INSERT INTO users (name, email, phone, password) VALUES (?, ?, ?, ?)', [name, email, phone, password], (err, results) => {
             if (err) return reject(err);
             resolve(results);
         });
