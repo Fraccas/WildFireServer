@@ -6,7 +6,7 @@ const router = Router();
 
 
 // get all fires
-router.get('/', async (req, res) => {
+router.get('/', isLogged, async (req, res) => {
     try {
         res.json(await db.Fires.getFires());
     } catch (e) {
