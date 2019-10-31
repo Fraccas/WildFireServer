@@ -29,7 +29,7 @@ export const addToken = async (userid: string) => {
     });
 }
 
-export const updateToken = async (token: string, id: string) => {
+export const updateToken = async (id: string, token: string) => {
     return new Promise((resolve, reject) => {
         pool.query('UPDATE accesstokens SET token = ? WHERE id = ?', [token, id], (err, results) => {
             if (err) return reject(err);
