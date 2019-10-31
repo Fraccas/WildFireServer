@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import db from '../../db';
-import { isAdmin } from '../../middleware/authCheckpoints';
+import { isLogged } from '../../middleware/authCheckpoints';
 
 const router = Router();
 
@@ -24,7 +24,7 @@ router.post('/new', async (req, res) => {
     }
 });
 
-router.get('/gmap/key', async (req, res) => {
+router.get('/gmap/key', isLogged, async (req, res) => {
     try {
         res.json(process.env.MAPS_KEY);
     } catch (e) {

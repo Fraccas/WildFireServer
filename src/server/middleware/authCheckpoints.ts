@@ -23,3 +23,14 @@ export const isAdmin: RequestHandler = (req: any, res, next) => {
         return next();
     }
 };
+
+// restricts assess to API calls based on has token
+// import {isLogged} from ....
+// ex: router.post('/', isLogged, async(req, res, next) => {
+    export const isLogged: RequestHandler = (req: any, res, next) => {
+        if (!req.user) {
+            return res.sendStatus(401);
+        } else {
+            return next();
+        }
+    };
